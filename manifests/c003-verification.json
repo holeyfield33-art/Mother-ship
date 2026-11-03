@@ -1,0 +1,125 @@
+{
+ "schema": "mothership-package-manifest/v1",
+ "package_id": "c003-verification",
+ "cycles": [
+  "C-003"
+ ],
+ "producer": {
+  "platform": "Manus",
+  "orchestrator": "ChatGPT (Research Coordinator)",
+  "attribution": "self_reported, cross-checked against package bytes"
+ },
+ "original_filename": "MOTHERSHIP_C003_VERIFICATION.zip",
+ "asset_name": "MOTHERSHIP_C003_VERIFICATION.zip",
+ "bytes": 1321581,
+ "sha256": "2b6de56736ef1b94917a243f66586f7521139477bcb12312e99281656e3dafb6",
+ "container": "zip",
+ "entry_count": 20,
+ "entries": [
+  {
+   "path": "raw/cycle01_originals/cisa_kev_snapshot.json",
+   "bytes": 1822979,
+   "sha256": "38a7172a5f26470dc7632aaa1c6cff4a51fe7bfec8cdce978a19b816a751e34d"
+  },
+  {
+   "path": "raw/cycle01_originals/github_global_advisories_sample.json",
+   "bytes": 157806,
+   "sha256": "334d965f43a928e49606bffdd7a79eb5d3f03003953bc42327dd6def3ff22f5b"
+  },
+  {
+   "path": "raw/cycle01_originals/nvd_cves_recent_sample.json",
+   "bytes": 71571,
+   "sha256": "e20e299917ba6e614bfc40e2f9b658faf19837da5bdc498342a73390af21c3fe"
+  },
+  {
+   "path": "raw/nvd_api_pages/page_000000.json",
+   "bytes": 4260284,
+   "sha256": "63e34dd13ac220f59ad6716887f59a8a36697ca049d6db5d33491b89d6401814"
+  },
+  {
+   "path": "raw/nvd_api_pages/page_416000.json",
+   "bytes": 1952529,
+   "sha256": "69108f190a3b8df739f5c0f5677142ae07952abc20e60699196111b4bcf62deb"
+  },
+  {
+   "path": "checkpoints/nvd_api.json",
+   "bytes": 4137,
+   "sha256": "440fdd17f40b2b0bfb3062681d87041e968689492ce7f55597ca85f6731460ea"
+  },
+  {
+   "path": "checkpoints/nvd_incremental.json",
+   "bytes": 337,
+   "sha256": "03d60204ab18187353ddbd64ad44a8b386da0a7375d192827069aa429b38723f"
+  },
+  {
+   "path": "logs/collection_errors.jsonl",
+   "bytes": 1487,
+   "sha256": "65d47740baa16eac120c98375b9a54cfc9a4763c4bf0b3636f4b10b53cbbf729"
+  },
+  {
+   "path": "acquisition_report.md",
+   "bytes": 5477,
+   "sha256": "6accbad8848932c9ba6cae64e93f378e735c163f5582fd2aede136f0acc8f63b"
+  },
+  {
+   "path": "acquisition_manifest.json",
+   "bytes": 87327,
+   "sha256": "9d32f179fa4af86e182166f6b2b6d0366d66d86f634dd1a729dd05ae4ecdd654"
+  },
+  {
+   "path": "coverage_manifest.json",
+   "bytes": 81039,
+   "sha256": "f702e091ba9b9696e206c41a025d81a343a78b1cb783c8b34db7385b834d58d1"
+  },
+  {
+   "path": "raw_file_manifest.jsonl",
+   "bytes": 105656,
+   "sha256": "68dcba2fa0e23b5d626306ff2dbcdf0ed7f1856e776a264cd7a0a2f483253532"
+  },
+  {
+   "path": "SHA256SUMS.txt",
+   "bytes": 21973,
+   "sha256": "ae0705b456eaefef8748dd16f5edf628d087471e4c677515b2d3b606f8d77332"
+  },
+  {
+   "path": "sha256_manifest.jsonl",
+   "bytes": 31161,
+   "sha256": "9647887749df84116644353fad068c3dfd140c11224ff55cad078d6e2a6509f4"
+  },
+  {
+   "path": "raw/nvd_total_reconciliation.json",
+   "bytes": 2517,
+   "sha256": "f9db725dea49225cf27c43f23517008244d0233215198abd13c860df82c3e7d1"
+  },
+  {
+   "path": "raw/nvd_total_reconciliation.meta.json",
+   "bytes": 347,
+   "sha256": "51efa1150c67ab0c52316aabf69172fd01e7c0263698e742349e454763757f17"
+  },
+  {
+   "path": "C002_handoff_archive.tar.gz.sha256",
+   "bytes": 101,
+   "sha256": "780a4dada6dcfe4ce480fd466bd476fa592d6a651cadc44b8c807370096c4c52"
+  },
+  {
+   "path": "C003_external_metadata/cve_release.json",
+   "bytes": 54586,
+   "sha256": "785faae69340e7bc468fb83fb78feac5f2493d1a39a30943af55e11afa97f429"
+  },
+  {
+   "path": "C003_external_metadata/github_commit.json",
+   "bytes": 55735,
+   "sha256": "58fb58cfa3d760eed3fc1b8968099340ffda76375b965886c5be5e53ac232aff"
+  },
+  {
+   "path": "C003_external_metadata/osv_generation.json",
+   "bytes": 166,
+   "sha256": "bb16c5148be287e669eec973e8ed24dd2fe1d06b498e1c0958553800b788f02c"
+  }
+ ],
+ "storage": {
+  "repo": "holeyfield33-art/Mother-ship-archive",
+  "release_tag": "c003",
+  "status": "PENDING_UPLOAD"
+ }
+}

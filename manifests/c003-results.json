@@ -1,0 +1,55 @@
+{
+ "schema": "mothership-package-manifest/v1",
+ "package_id": "c003-results",
+ "cycles": [
+  "C-003"
+ ],
+ "producer": {
+  "platform": "Manus",
+  "orchestrator": "ChatGPT (Research Coordinator)",
+  "attribution": "self_reported, cross-checked against package bytes"
+ },
+ "original_filename": "MOTHERSHIP_C003_RESULTS.zip",
+ "asset_name": "MOTHERSHIP_C003_RESULTS.zip",
+ "bytes": 59205,
+ "sha256": "91a5c5683d75c4b22350e1269dcfcf25275cbdb1267ccefb75abe31b321571c2",
+ "container": "zip",
+ "entry_count": 6,
+ "entries": [
+  {
+   "path": "C003_integrity_results.jsonl",
+   "bytes": 100024,
+   "sha256": "85478e2e364a4a93419c64917281a7f9abc0ee8d44fe8499d88022f7a246f1a7"
+  },
+  {
+   "path": "C003_nvd_reconciliation.json",
+   "bytes": 70814,
+   "sha256": "1feb31cdceeccb13d7ceafa7412853e26fd6c80992718d9a43128179b427400a"
+  },
+  {
+   "path": "C003_archive_validation.json",
+   "bytes": 6196,
+   "sha256": "69afa60337be21783bd0b013a3bd0fcae98a79b6d1ab0cb0dd0e3778129579c4"
+  },
+  {
+   "path": "C003_cross_source_sample.jsonl",
+   "bytes": 320316,
+   "sha256": "399575bdcfd44ade3296787d072f2c17936b48235879de313c042e1a92e3ece1"
+  },
+  {
+   "path": "C003_verification_report.md",
+   "bytes": 4839,
+   "sha256": "586a4a880bcf8bc530d36300b474a3a90f1d136f1af33418547b8df4fce81149"
+  },
+  {
+   "path": "C003_unresolved.json",
+   "bytes": 3935,
+   "sha256": "73aaab49b7ce9f868cbb6ae9f0bea88fc0ab70b9fcb02cadbc2a11906dbaace6"
+  }
+ ],
+ "storage": {
+  "repo": "holeyfield33-art/Mother-ship-archive",
+  "release_tag": "c003",
+  "status": "PENDING_UPLOAD"
+ }
+}

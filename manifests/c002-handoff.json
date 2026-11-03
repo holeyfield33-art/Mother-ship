@@ -1,0 +1,27 @@
+{
+ "schema": "mothership-package-manifest/v1",
+ "package_id": "c002-handoff",
+ "cycles": [
+  "C-002"
+ ],
+ "producer": {
+  "platform": "Manus",
+  "orchestrator": "ChatGPT (Research Coordinator)",
+  "attribution": "self_reported, cross-checked against package bytes"
+ },
+ "original_filename": "vuln_intel_cycle_02_handoff.tar.gz",
+ "asset_name": "MOTHERSHIP_C002_HANDOFF.tar.gz",
+ "bytes": 3659552713,
+ "sha256": "14738da2fc7d0dd0ea9cb36f9dd3b7b618344fbc3fe3103d8719c8d4c4dabf62",
+ "hash_evidence": "Manus C-002 self-report and C-003 verification report (217/217 raw files PASS); byte count observed on owner PC 2026-11-02. Not rehashed by this session (file too large to transfer).",
+ "container": "tar",
+ "entry_count": 0,
+ "entries": [],
+ "parts": null,
+ "storage": {
+  "repo": "holeyfield33-art/Mother-ship-archive",
+  "release_tag": "c002",
+  "status": "PENDING_SPLIT_AND_UPLOAD",
+  "split_rule": "two parts under 2 GiB each (GitHub release asset limit); fill parts[] with name/bytes/sha256 after splitting; verify rejoin before upload"
+ }
+}
