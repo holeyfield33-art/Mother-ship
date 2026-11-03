@@ -41,11 +41,13 @@ def wanted_ids(records_root):
 
 
 def ghsa_rows(data, ghsa_wanted, cve_wanted):
-    rows = {}
+    rows, parsed = {}, 0
     with tarfile.open(fileobj=io.BytesIO(data), mode="r:gz") as t:
         for m in t:
-            if not (m.isfile() and m.name.endswith(".json") and "/advisories/" in m.name):
+            name = m.name.removeprefix("./")
+            if not (m.isfile() and name.endswith(".json") and (name.startswith("advisories/") or "/advisories/" in name)):
                 continue
+            parsed += 1
             a = json.loads(t.extractfile(m).read())
             gid = a.get("id", "")
             cves = sorted(x for x in a.get("aliases") or [] if x.startswith("CVE-"))
@@ -53,9 +55,11 @@ def ghsa_rows(data, ghsa_wanted, cve_wanted):
                 continue
             ds = a.get("database_specific") or {}
             rows[gid] = {"ghsa": gid, "cves": cves, "cwe": sorted(set(ds.get("cwe_ids") or [])),
-                         "reviewed": bool(ds.get("github_reviewed")), "withdrawn": a.get("withdrawn"),
-                         "path": m.name.split("/", 1)[-1]}
-    return rows
+                         "reviewed": bool(ds.get("github_reviewed")) or "/github-reviewed/" in name,
+                         "withdrawn": a.get("withdrawn"), "path": name}
+    if parsed == 0:
+        raise ValueError("GitHub Advisory snapshot contained no advisory JSON files; refusing to report zero matches")
+    return rows, parsed
 
 
 def nvd_rows(data, cve_wanted, rows):
@@ -79,7 +83,7 @@ def main():
     ap.add_argument("--records", default=str(ROOT / "records"))
     a = ap.parse_args()
     ghsa_wanted, cve_wanted = wanted_ids(a.records)
-    seen_hash, ghsa, nvd, sums = {}, {}, {}, None
+    seen_hash, ghsa, nvd, sums, ghsa_parsed = {}, {}, {}, None, 0
     with tarfile.open(fileobj=sys.stdin.buffer, mode="r|gz") as t:
         for m in t:
             if not m.isfile():
@@ -92,7 +96,11 @@ def main():
             data = t.extractfile(m).read()
             seen_hash[m.name.split("vuln_intel_cycle_02/", 1)[1]] = hashlib.sha256(data).hexdigest()
             if m.name == GHSA_MEMBER:
-                ghsa = ghsa_rows(data, ghsa_wanted, cve_wanted)
+                try:
+                    ghsa, ghsa_parsed = ghsa_rows(data, ghsa_wanted, cve_wanted)
+                except ValueError as e:
+                    print(f"FAILED: {e}")
+                    return 1
             else:
                 nvd_rows(data, cve_wanted, nvd)
     if sums is None or GHSA_MEMBER.split("vuln_intel_cycle_02/", 1)[1] not in seen_hash:
@@ -118,6 +126,7 @@ def main():
         "files_read": len(seen_hash), "files_checked_against_c002_sha256sums": len(seen_hash),
         "ghsa_snapshot_sha256": seen_hash["raw/github-advisory-database-main.tar.gz"], "nvd_pages": len(nvd_pages),
         "wanted": {"ghsa_ids": len(ghsa_wanted), "cve_ids": len(cve_wanted)},
+        "ghsa_advisory_files_parsed": ghsa_parsed,
         "found": {"ghsa_rows": len(ghsa), "ghsa_with_cwe": sum(bool(r["cwe"]) for r in ghsa.values()),
                   "nvd_rows": len(nvd),
                   "nvd_with_real_cwe": sum(any(REAL_CWE.match(x) for w in r["weaknesses"] for x in w["values"]) for r in nvd.values())},
