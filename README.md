@@ -14,4 +14,4 @@ Preserve original source bytes, SHA-256 checksums, retrieval metadata, source UR
 
 ## Current backup status
 
-This initial commit preserves the project charter and intake structure only. Prior research ZIPs and raw source files have not yet been uploaded or independently verified in this repository.
+All located research packages have been hashed and recorded in `manifests/`. Their bytes are being moved to the private `Mother-ship-archive` repo as releases. See [docs/STATUS.md](docs/STATUS.md) for current state, and `AGENTS.md` for how agents should work here.

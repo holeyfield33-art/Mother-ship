@@ -1,0 +1,68 @@
+{
+ "schema": "mothership-package-manifest/v1",
+ "package_id": "p004-historical-evidence",
+ "cycles": [
+  "P-004"
+ ],
+ "producer": {
+  "platform": "Manus",
+  "orchestrator": "ChatGPT (Research Coordinator)",
+  "attribution": "self_reported, cross-checked against package bytes"
+ },
+ "original_filename": "Collect and catalog public vulnerability intelligence.zip",
+ "asset_name": "MOTHERSHIP_P004_HISTORICAL_EVIDENCE_BUNDLE.zip",
+ "bytes": 298434,
+ "sha256": "220a48af59d649dfd1dfdb3eab4b4201ea93bbc8bae6782710fc135148119fb6",
+ "container": "zip",
+ "entry_count": 8,
+ "entries": [
+  {
+   "path": "P-004 Historical Evidence Acquisition Report.md",
+   "bytes": 5253,
+   "sha256": "dfd05de017526c000ffca9e9cc4ef70647e1647cb19a624a6722867d34a98637"
+  },
+  {
+   "path": "P004_unresolved.json",
+   "bytes": 9173,
+   "sha256": "a3f09bf04b3d4a6e02886b77648750b4c2d6d7f30c6574289e957df064d25b01"
+  },
+  {
+   "path": "P004_source_manifest.jsonl",
+   "bytes": 51640,
+   "sha256": "53ba1117e96923e212651cad8e2a1a537e9eb606978807b2176341b42d2c4a49"
+  },
+  {
+   "path": "P004_sha256sums.txt",
+   "bytes": 2352,
+   "sha256": "e1b94bcef9d1ef691ab4b004c8c7d7d7b36ce6d16aadb06500c2f486965a8d5a"
+  },
+  {
+   "path": "P004_signature_verification.jsonl",
+   "bytes": 21440,
+   "sha256": "4e146b8a5145ae72c7ec1f51c5ea7750ed1ff2a32ff53be3757e0d3c6d99dd37"
+  },
+  {
+   "path": "P004_patch_references.jsonl",
+   "bytes": 134869,
+   "sha256": "fd3a323132eeaa7fd608bb23faf313eccc245cfcbf6424896447606df7534528"
+  },
+  {
+   "path": "MOTHERSHIP_P004_HISTORICAL_EVIDENCE.zip",
+   "bytes": 72457,
+   "sha256": "d1c09da30d9d8b2cac2c855a6d3aaf59601110fb4133314e6c671c15c37c40c0"
+  },
+  {
+   "path": "MOTHERSHIP_P004_HISTORICAL_EVIDENCE.zip.sha256",
+   "bytes": 106,
+   "sha256": "3b1de28cb2d645d8168a27202bd1dc7788709ea01362ce1103199041fbc2c74a"
+  }
+ ],
+ "storage": {
+  "repo": "holeyfield33-art/Mother-ship-archive",
+  "path": "packages/p004/MOTHERSHIP_P004_HISTORICAL_EVIDENCE_BUNDLE.zip",
+  "commit": "74aa27c",
+  "visibility": "public",
+  "status": "STORED",
+  "verified": "2026-11-03 fresh public clone, mship_manifest.py verify PASS"
+ }
+}

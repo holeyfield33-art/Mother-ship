@@ -1,0 +1,149 @@
+{
+ "schema": "mothership-package-manifest/v1",
+ "package_id": "d004-ecosystem-evidence",
+ "cycles": [
+  "D-004",
+  "D-003"
+ ],
+ "producer": {
+  "platform": "Manus",
+  "orchestrator": "ChatGPT (Research Coordinator)",
+  "attribution": "self_reported, cross-checked against package bytes"
+ },
+ "original_filename": "MOTHERSHIP_D004_ECOSYSTEM_EVIDENCE.zip",
+ "asset_name": "MOTHERSHIP_D004_ECOSYSTEM_EVIDENCE.zip",
+ "bytes": 22742076,
+ "sha256": "8bf7a6311e32ce803efb1cb6531c1a63a53eda2732a38d6bab486da6c52c3a7e",
+ "container": "zip",
+ "entry_count": 24,
+ "entries": [
+  {
+   "path": "D004_acquisition_manifest.jsonl",
+   "bytes": 4352,
+   "sha256": "402653c3b44d7bb88b4148075097bfd27dd151aec1ece237d2b9f66e9159d34e"
+  },
+  {
+   "path": "D004_overlap_report.json",
+   "bytes": 28046288,
+   "sha256": "bb330a386d593ce6b93af6742111250e62a1e37ca2bb70d7b1ef565593f1dc67"
+  },
+  {
+   "path": "D004_report.md",
+   "bytes": 5962,
+   "sha256": "e6101ee1b47b50423ae7ac50a1f603b701abad1cdf4717a791ad9587fd99f3fe"
+  },
+  {
+   "path": "D004_repository_tar_validation.json",
+   "bytes": 1932,
+   "sha256": "334da6356c2cd48b59279aed8786206f0c6dd4ecb78e87e95d9c8585d4f51780"
+  },
+  {
+   "path": "D004_sha256sums.txt",
+   "bytes": 2027,
+   "sha256": "b9fdd6f9fac9b2dd2f8d795c6ab17e76a795a63a3aaddaa896e5e4a7585a10ee"
+  },
+  {
+   "path": "D004_source_revisions.json",
+   "bytes": 3574,
+   "sha256": "f21c7f3b292264dc02267007b1953640dd93b0adedc45c19c110905e62235b42"
+  },
+  {
+   "path": "D004_unresolved.json",
+   "bytes": 3658,
+   "sha256": "75828d20127c6323fd212ecc80a6ca993afb3744a0d63bd203fcd6d1c72836d6"
+  },
+  {
+   "path": "acquisition_evidence/go_vulndb/response_headers.txt",
+   "bytes": 734,
+   "sha256": "ef5b494f568cc91e0eed2bb8232fa4ea725987dfea8ccc5fe166416d8bb59a4f"
+  },
+  {
+   "path": "acquisition_evidence/go_vulndb/target_result.json",
+   "bytes": 478,
+   "sha256": "2d9fa3d85e284103e75845704f6662331de306e85c3bcdc95db91b3b700b0ed3"
+  },
+  {
+   "path": "acquisition_evidence/osv_hackage/response_headers.txt",
+   "bytes": 723,
+   "sha256": "986cb3325ad7047a697e37f7da5001eba9c01750a2c75d82dd653ec7c9d2b215"
+  },
+  {
+   "path": "acquisition_evidence/osv_hackage/target_result.json",
+   "bytes": 554,
+   "sha256": "a8c57967eba4df68f39a77aeaa858f6d95a8472f591d087df7267f9a4f2df100"
+  },
+  {
+   "path": "acquisition_evidence/pypa_advisory_database/pypa.ls-remote",
+   "bytes": 57,
+   "sha256": "7b25e16f0f7d5f212f977d7b59d3872320182321e1c7b7196c241a8cb7db1e5d"
+  },
+  {
+   "path": "acquisition_evidence/pypa_advisory_database/target_result.json",
+   "bytes": 849,
+   "sha256": "60038627f22e7e851820a2a2668495aa519f6c729c5b1970da54ce1f56273c79"
+  },
+  {
+   "path": "acquisition_evidence/rustsec_advisory_database/rustsec.ls-remote",
+   "bytes": 57,
+   "sha256": "caa68d5be7a9d22983e27fd574d6c05c83745d954deaee8bbe68c523a906dbef"
+  },
+  {
+   "path": "acquisition_evidence/rustsec_advisory_database/target_result.json",
+   "bytes": 692,
+   "sha256": "d0d42ad9c4b72abff5a6793d37782bb73a0309c9617bb379af216d638c32c093"
+  },
+  {
+   "path": "original/hackage-all.zip",
+   "bytes": 52482,
+   "sha256": "fb96b44a3496fa33e6b8381712f01c47482cceea0997da7a61b64e197e3735f5"
+  },
+  {
+   "path": "original/pypa-advisory-database-8084f16.tar.gz",
+   "bytes": 14808366,
+   "sha256": "095db4aaf332d31b886e5d405340452fd41e037cfebe910355f43d9e37d7af7b"
+  },
+  {
+   "path": "original/rustsec-advisory-db-2295466.tar.gz",
+   "bytes": 1562354,
+   "sha256": "830ef8de119408f6b186f0e91ca4e7e8c4cafd8d3b6829ea3b8a1d4b55de6e40"
+  },
+  {
+   "path": "original/vulndb.zip",
+   "bytes": 3516204,
+   "sha256": "a1118204c33192c19510f39448d46590432e0b6d115abdcd3a39476b6dc71ea8"
+  },
+  {
+   "path": "verification/C002_coverage_manifest.json",
+   "bytes": 81039,
+   "sha256": "f702e091ba9b9696e206c41a025d81a343a78b1cb783c8b34db7385b834d58d1"
+  },
+  {
+   "path": "verification/c002_overlap/cvelist.json",
+   "bytes": 3362591,
+   "sha256": "72f7be8fa844b7b6f2f34733ffad2f18e9b4fa0a4b85a85ea81bcf5c3c528191"
+  },
+  {
+   "path": "verification/c002_overlap/github_advisory_database.json",
+   "bytes": 3696867,
+   "sha256": "96f4e9e8bc6232ff30f7ebe2195ea4df881b98a96b4bf8e874b2755296455fc7"
+  },
+  {
+   "path": "verification/c002_overlap/nvd.json",
+   "bytes": 3912754,
+   "sha256": "5103bfb029952bdaef931eb0d2d9744e40675ea46c3309a5f762bf1f83f5257d"
+  },
+  {
+   "path": "verification/c002_overlap/osv.json",
+   "bytes": 8675392,
+   "sha256": "be4642ae16826f1ebc3ea60bdc12a1b11ce0e714c87ff4e38c9f4b98200d925d"
+  }
+ ],
+ "storage": {
+  "repo": "holeyfield33-art/Mother-ship-archive",
+  "path": "packages/d004/MOTHERSHIP_D004_ECOSYSTEM_EVIDENCE.zip",
+  "commit": "74aa27c",
+  "visibility": "public",
+  "status": "STORED",
+  "verified": "2026-11-03 fresh public clone, mship_manifest.py verify PASS"
+ }
+}

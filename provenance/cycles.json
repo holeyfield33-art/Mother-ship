@@ -1,0 +1,228 @@
+{
+ "project": "MOTHERSHIP-001",
+ "orchestrator": "ChatGPT (Research Coordinator)",
+ "generated": "2026-11-02",
+ "note": "self_reported = agent's own account; confirmed = matched against package bytes this session",
+ "cycles": [
+  {
+   "cycle": "MOTHERSHIP-001 (shared kickoff)",
+   "platform": "all five",
+   "role": "same initial directive to every agent",
+   "result": "Each agent produced a different first response; coordinator then assigned lanes",
+   "status": "self_reported"
+  },
+  {
+   "cycle": "C-001",
+   "platform": "Manus",
+   "lane": "authoritative-source acquisition",
+   "inputs": [
+    "pasted directive"
+   ],
+   "outputs": [
+    {
+     "name": "vuln_intel_cycle_01_handoff.tar.gz",
+     "sha256": "UNKNOWN",
+     "located": false
+    }
+   ],
+   "evidence": "C-003 VERIFICATION carries raw/cycle01_originals/* and C-002 manifest says cycle01 hashes match",
+   "status": "self_reported+partially_confirmed"
+  },
+  {
+   "cycle": "C-002",
+   "platform": "Manus",
+   "inputs": [
+    {
+     "from": "C-001"
+    }
+   ],
+   "outputs": [
+    {
+     "name": "vuln_intel_cycle_02_handoff.tar.gz",
+     "sha256": "14738da2fc7d0dd0ea9cb36f9dd3b7b618344fbc3fe3103d8719c8d4c4dabf62",
+     "bytes": 3659552713,
+     "located": "Downloads (PC)"
+    }
+   ],
+   "status": "confirmed: hash in self-report == C-003 report; size == Downloads file"
+  },
+  {
+   "cycle": "C-003",
+   "platform": "Manus",
+   "inputs": [
+    {
+     "from": "C-002",
+     "sha256": "14738da2\u2026"
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MOTHERSHIP_C003_RESULTS.zip",
+     "sha256": "91a5c568\u2026",
+     "located": "Downloads"
+    },
+    {
+     "name": "MOTHERSHIP_C003_VERIFICATION.zip",
+     "sha256": "2b6de567\u2026",
+     "located": "Downloads"
+    }
+   ],
+   "status": "confirmed: input hash link + 6/6 sums"
+  },
+  {
+   "cycle": "D1 + KEV + CWE (Grok cycle 1)",
+   "platform": "Grok",
+   "workdir": "/home/workdir",
+   "outputs": [
+    {
+     "name": "vuln_archive.zip",
+     "sha256": "bd4ac028\u2026",
+     "located": "Downloads"
+    },
+    {
+     "name": "cwe_latest.xml.zip",
+     "sha256": "bcda44c9\u2026"
+    }
+   ],
+   "status": "confirmed: CWE hash matches; KEV 1764 records catalogVersion 2026.10.29 matches"
+  },
+  {
+   "cycle": "X-002",
+   "platform": "Grok",
+   "inputs": [
+    {
+     "from": "Grok cycle 1",
+     "sha256": "bcda44c9\u2026"
+    }
+   ],
+   "outputs": [
+    {
+     "name": "x002/* inside vuln_archive.zip"
+    }
+   ],
+   "status": "confirmed: 30 findings present"
+  },
+  {
+   "cycle": "X-004",
+   "platform": "Grok",
+   "inputs": [
+    {
+     "from": "X-002"
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MOTHERSHIP_X004_VERIFICATION.zip",
+     "sha256": "inside vuln_archive (1).zip 2f85e6a0\u2026",
+     "bytes": 7961,
+     "located": "user upload 2026-11-02"
+    }
+   ],
+   "status": "confirmed: self-reported 7.8K == 7,961 bytes; 7/7 inner files == loose x004 files; X-002 files unchanged; 30/30 findings reconciled (22 single, 3 groups, 5 overviews); 0 CONTRADICTED; 7 reusable root-cause patterns"
+  },
+  {
+   "cycle": "Perplexity cycle 1",
+   "platform": "Perplexity",
+   "outputs": [
+    {
+     "name": "MOTHERSHIP-001-cycle-1.zip",
+     "bytes": 10122,
+     "located": false
+    }
+   ],
+   "status": "self_reported; package not found"
+  },
+  {
+   "cycle": "P-002",
+   "platform": "Perplexity",
+   "outputs": [],
+   "status": "self_reported: narrative only; overclaimed counts, corrected by P-003"
+  },
+  {
+   "cycle": "P-003",
+   "platform": "Perplexity",
+   "outputs": [
+    {
+     "name": "MOTHERSHIP_P003_HISTORICAL_EVIDENCE.zip",
+     "sha256": "734c3075\u20261925",
+     "bytes": 15595
+    }
+   ],
+   "status": "confirmed: all 11 file sizes in self-report == package; 10/10 internal hashes"
+  },
+  {
+   "cycle": "P-004",
+   "platform": "Manus",
+   "inputs": [
+    {
+     "from": "P-003",
+     "sha256": "734c3075\u20261925 (per P-004 report)"
+    }
+   ],
+   "outputs": [
+    {
+     "name": "Collect and catalog public vulnerability intelligence.zip",
+     "sha256": "220a48af\u2026",
+     "located": "Downloads"
+    }
+   ],
+   "status": "confirmed: hash link + 21/21 inner sums. CONFLICT: self-report says 16 inline patches 'not confirmed'; its own report says confirmed in all 16",
+   "user_note": "Ashura confirms: Manus's last run was never added to MOTHERSHIP"
+  },
+  {
+   "cycle": "D-002",
+   "platform": "DeepSeek",
+   "lane": "ecosystem advisories + benchmark datasets",
+   "outputs": [
+    "8 artifacts as text blocks only"
+   ],
+   "status": "self_reported; text only, no files. Contains negative controls + 13 benchmark datasets (useful for calibration)",
+   "user_note": "Ashura agrees: solid DeepSeek findings (negative controls, benchmark datasets) are usable for scanner calibration and Blockwise"
+  },
+  {
+   "cycle": "D-003",
+   "platform": "DeepSeek",
+   "outputs": [
+    "acquisition commands; 0 files acquired"
+   ],
+   "status": "self_reported; handed acquisition specs that Manus executed as D-004"
+  },
+  {
+   "cycle": "D-004",
+   "platform": "Manus",
+   "inputs": [
+    {
+     "from": "D-003 (DeepSeek commands)"
+    },
+    {
+     "from": "C-002 coverage manifest"
+    }
+   ],
+   "outputs": [
+    {
+     "name": "MOTHERSHIP_D004_ECOSYSTEM_EVIDENCE.zip",
+     "sha256": "8bf7a6311e32ce803efb1cb6531c1a63a53eda2732a38d6bab486da6c52c3a7e",
+     "bytes": 22742076,
+     "located": "Downloads (2 identical copies)"
+    }
+   ],
+   "status": "confirmed: hash+bytes match file and repo inventory. NOTE: self-report prompt_excerpt is the self-report directive, not the D-004 prompt"
+  },
+  {
+   "cycle": "G-002..G-005",
+   "platform": "Gemini",
+   "lane": "documentation audit",
+   "outputs": [
+    "text only"
+   ],
+   "status": "self_reported. G-002 hash e3b0c442\u2026 is SHA-256 of an EMPTY string; other two show repeated fragments = fabricated; retracted in G-003",
+   "user_note": "Gemini run cut short by Ashura after it began fabricating; chat short enough to copy in full"
+  }
+ ],
+ "deferred": [
+  "Perplexity cycle-1 ZIP (10,122 bytes)",
+  "Manus C-001 handoff",
+  "Gemini full chat text (copy)",
+  "DeepSeek D-002/D-003 text blocks (copy)"
+ ]
+}

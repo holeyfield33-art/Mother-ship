@@ -1,0 +1,89 @@
+{
+ "schema": "mothership-package-manifest/v1",
+ "package_id": "grok-vuln-archive-x002",
+ "cycles": [
+  "D1",
+  "X-002"
+ ],
+ "producer": {
+  "platform": "Grok",
+  "orchestrator": "ChatGPT (Research Coordinator)",
+  "attribution": "self_reported, cross-checked against package bytes"
+ },
+ "original_filename": "vuln_archive.zip",
+ "asset_name": "MOTHERSHIP_GROK_D1_X002.zip",
+ "bytes": 4449135,
+ "sha256": "bd4ac028123229aaac3a075431e5e8a7c04ebd1d65847474a3f4e202065b2721",
+ "container": "zip",
+ "entry_count": 12,
+ "entries": [
+  {
+   "path": "vuln_archive/D1_Source_Registry.md",
+   "bytes": 3758,
+   "sha256": "901db0caed68167e0ea664e03c3947c3c5950cfbd2d12f557cf621550a72b0ff"
+  },
+  {
+   "path": "vuln_archive/x002/X002_evidence_manifest.json",
+   "bytes": 936,
+   "sha256": "715b75d062cb856dfe3f8cf7abc2573e951cd6cb1b131605327475b3a5dae2a3"
+  },
+  {
+   "path": "vuln_archive/kev/known_exploited_vulnerabilities.json",
+   "bytes": 1822979,
+   "sha256": "38a7172a5f26470dc7632aaa1c6cff4a51fe7bfec8cdce978a19b816a751e34d"
+  },
+  {
+   "path": "vuln_archive/x002/X002_root_causes.jsonl",
+   "bytes": 5232,
+   "sha256": "dd575bd6153b4b7660d6d241854db957c500037811f19c9f498cb3006528954e"
+  },
+  {
+   "path": "vuln_archive/x002/X002_public_poc_references.jsonl",
+   "bytes": 2446,
+   "sha256": "2aacc238bbb3ebc37e6498208574de2306e7a260799b7f35263b69f6ae91508d"
+  },
+  {
+   "path": "vuln_archive/x002/X002_research_sources.json",
+   "bytes": 2463,
+   "sha256": "e9574d584ce42164be926af88490cbe26f6279c708bdb768d1bee8bed90717ca"
+  },
+  {
+   "path": "vuln_archive/x002/X002_technical_findings.jsonl",
+   "bytes": 22630,
+   "sha256": "852bb572840b518a6600b978d548ec2ae368fb81f176d4e5b146d7c21f8c2ba0"
+  },
+  {
+   "path": "vuln_archive/x002/X002_report.md",
+   "bytes": 2908,
+   "sha256": "caf91570def4adbdb701db63dd3dfbd177119666e45c3e9d38f2e940e15053e7"
+  },
+  {
+   "path": "vuln_archive/x002/cwe_sha256.txt",
+   "bytes": 127,
+   "sha256": "2f00f741b22d68b602794086c209447d0233839267a26d8edfc20941e608bb44"
+  },
+  {
+   "path": "vuln_archive/sources/cwe_latest.xml.zip",
+   "bytes": 2119263,
+   "sha256": "bcda44c9abf61ff977f50c3c6649eea5a97a7b0626b0396c2c3ec4bfb973a3dc"
+  },
+  {
+   "path": "vuln_archive/x002/X002_unresolved.json",
+   "bytes": 1714,
+   "sha256": "c238cd7df421147f6a13b6fc9ee6f99f38e6033e103b2f9aa3274d06d509b01d"
+  },
+  {
+   "path": "vuln_archive/x002/cwe_latest.xml.zip",
+   "bytes": 2119263,
+   "sha256": "bcda44c9abf61ff977f50c3c6649eea5a97a7b0626b0396c2c3ec4bfb973a3dc"
+  }
+ ],
+ "storage": {
+  "repo": "holeyfield33-art/Mother-ship-archive",
+  "path": "packages/grok-x002/MOTHERSHIP_GROK_D1_X002.zip",
+  "commit": "74aa27c",
+  "visibility": "public",
+  "status": "STORED",
+  "verified": "2026-11-03 fresh public clone, mship_manifest.py verify PASS"
+ }
+}

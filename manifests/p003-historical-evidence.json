@@ -1,0 +1,83 @@
+{
+ "schema": "mothership-package-manifest/v1",
+ "package_id": "p003-historical-evidence",
+ "cycles": [
+  "P-003"
+ ],
+ "producer": {
+  "platform": "Perplexity",
+  "orchestrator": "ChatGPT (Research Coordinator)",
+  "attribution": "self_reported, cross-checked against package bytes"
+ },
+ "original_filename": "MOTHERSHIP_P003_HISTORICAL_EVIDENCE.zip",
+ "asset_name": "MOTHERSHIP_P003_HISTORICAL_EVIDENCE.zip",
+ "bytes": 15595,
+ "sha256": "734c30752d0396d420f18141d5d75f3f8b408baac6fcaf074d2a08cfbbf61925",
+ "container": "zip",
+ "entry_count": 11,
+ "entries": [
+  {
+   "path": "P003_source_registry.json",
+   "bytes": 2696,
+   "sha256": "bc17f18fa1aed4f739628275144d517b3f7cb069a2865a0bbd26729a8b58cc51"
+  },
+  {
+   "path": "P003_reconciliation.json",
+   "bytes": 8578,
+   "sha256": "26fef899a473020684099caeafa77654a2e7110f163c44ab36d577762e9544aa"
+  },
+  {
+   "path": "P003_historical_findings.jsonl",
+   "bytes": 29720,
+   "sha256": "158a01f83d7c238fa9f14284d5499b4a04799392f4aec4c5c1b6d2dd73b2e422"
+  },
+  {
+   "path": "P003_evidence_manifest.jsonl",
+   "bytes": 31975,
+   "sha256": "88463dc79efe5cf13e37abe5e76341050fa3dd1188b9824213aa1cc3c5a50e19"
+  },
+  {
+   "path": "P003_identifier_reconciliation.jsonl",
+   "bytes": 1879,
+   "sha256": "6e0a67ab346aefe5a36304a7375ccc33c1a0076c00720ddf98e7cb8caff385b7"
+  },
+  {
+   "path": "P003_unresolved.json",
+   "bytes": 1940,
+   "sha256": "37f0f217647328250d81a1b9c9a815a566834a2c307c66ab26cd4c07bca510e0"
+  },
+  {
+   "path": "P003_coverage.json",
+   "bytes": 1258,
+   "sha256": "72a4102b31f2ed0a37afc983125f353f7f97ecf6cbb1d745cd2b500fa45dbd16"
+  },
+  {
+   "path": "P003_report.md",
+   "bytes": 6522,
+   "sha256": "96bd93c37784b55a6d4fa5f314ff54634f09f9d341c69a2dcc84ba8df85a07d1"
+  },
+  {
+   "path": "evidence_excerpts/PGPKeyserver_statement.txt",
+   "bytes": 34,
+   "sha256": "bcf50391c13d6607413143ded3cdacccee6ce60ae0abc8d2cfcf3e1ff21deba5"
+  },
+  {
+   "path": "evidence_excerpts/Netscape_statement.txt",
+   "bytes": 33,
+   "sha256": "65f12e5ff1c8ca784a21b18a91948835f50c9020ba1a47886a6574018aba3f37"
+  },
+  {
+   "path": "P003_package_integrity.json",
+   "bytes": 3889,
+   "sha256": "064aee11ea6135ea43f4288ed837123da4aa73c702a4a4d3664655adc44fbe81"
+  }
+ ],
+ "storage": {
+  "repo": "holeyfield33-art/Mother-ship-archive",
+  "path": "packages/p003/MOTHERSHIP_P003_HISTORICAL_EVIDENCE.zip",
+  "commit": "74aa27c",
+  "visibility": "public",
+  "status": "STORED",
+  "verified": "2026-11-03 fresh public clone, mship_manifest.py verify PASS"
+ }
+}
