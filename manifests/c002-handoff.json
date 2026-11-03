@@ -22,6 +22,7 @@
   "repo": "holeyfield33-art/Mother-ship-archive",
   "release_tag": "c002",
   "status": "PENDING_SPLIT_AND_UPLOAD",
-  "split_rule": "two parts under 2 GiB each (GitHub release asset limit); fill parts[] with name/bytes/sha256 after splitting; verify rejoin before upload"
+  "split_rule": "two parts under 2 GiB each (GitHub release asset limit); fill parts[] with name/bytes/sha256 after splitting; verify rejoin before upload",
+  "visibility": "public"
  }
 }

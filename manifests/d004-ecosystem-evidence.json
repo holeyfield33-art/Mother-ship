@@ -140,7 +140,10 @@
  ],
  "storage": {
   "repo": "holeyfield33-art/Mother-ship-archive",
-  "release_tag": "d004",
-  "status": "PENDING_UPLOAD"
+  "path": "packages/d004/MOTHERSHIP_D004_ECOSYSTEM_EVIDENCE.zip",
+  "commit": "74aa27c",
+  "visibility": "public",
+  "status": "STORED",
+  "verified": "2026-11-03 fresh public clone, mship_manifest.py verify PASS"
  }
 }

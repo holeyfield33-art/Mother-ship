@@ -119,7 +119,10 @@
  ],
  "storage": {
   "repo": "holeyfield33-art/Mother-ship-archive",
-  "release_tag": "c003",
-  "status": "PENDING_UPLOAD"
+  "path": "packages/c003/MOTHERSHIP_C003_VERIFICATION.zip",
+  "commit": "74aa27c",
+  "visibility": "public",
+  "status": "STORED",
+  "verified": "2026-11-03 fresh public clone, mship_manifest.py verify PASS"
  }
 }

@@ -2,7 +2,7 @@
 
 **This is the single living status page.** Dated notes in `checkpoints/` are history; where they disagree, this page wins.
 
-**Updated:** 2026-11-02 · **Phase:** 0 (preservation) in progress · **Plan:** [PLAN.md](PLAN.md)
+**Updated:** 2026-11-03 · **Phase:** 0 (preservation): 7 of 8 packages stored; C-002 split in progress · **Plan:** [PLAN.md](PLAN.md)
 
 ## Packages
 
@@ -10,14 +10,14 @@ Every package below was hashed in full on 2026-11-02 and matches its manifest in
 
 | Package | Cycles | Producer | Bytes | SHA-256 (start) | Bytes stored |
 |---|---|---|---:|---|---|
-| `d004-ecosystem-evidence` | D-003 → D-004 | Manus (from DeepSeek's specs) | 22,742,076 | `8bf7a6311e32` | Owner PC; release pending |
-| `c002-handoff` | C-002 | Manus | 3,659,552,713 | `14738da2fc7d` | **Owner PC only**; split + release pending |
-| `c003-results` | C-003 | Manus | 59,205 | `91a5c5683d75` | Owner PC; release pending |
-| `c003-verification` | C-003 | Manus | 1,321,581 | `2b6de56736ef` | Owner PC; release pending |
-| `grok-vuln-archive-x004` | D1, X-002, X-004 | Grok | 4,464,077 | `2f85e6a07784` | Upload; release pending |
-| `grok-vuln-archive-x002` | D1, X-002 | Grok | 4,449,135 | `bd4ac0281232` | Owner PC; release pending (earlier snapshot, a subset of x004) |
-| `p003-historical-evidence` | P-003 | Perplexity | 15,595 | `734c30752d03` | Upload; release pending |
-| `p004-historical-evidence` | P-004 | Manus | 298,434 | `220a48af59d6` | Owner PC; release pending |
+| `d004-ecosystem-evidence` | D-003 → D-004 | Manus (from DeepSeek's specs) | 22,742,076 | `8bf7a6311e32` | Archive repo `packages/` ✓ |
+| `c002-handoff` | C-002 | Manus | 3,659,552,713 | `14738da2fc7d` | **Owner PC only**; split running, then release `c002` |
+| `c003-results` | C-003 | Manus | 59,205 | `91a5c5683d75` | Archive repo `packages/` ✓ |
+| `c003-verification` | C-003 | Manus | 1,321,581 | `2b6de56736ef` | Archive repo `packages/` ✓ |
+| `grok-vuln-archive-x004` | D1, X-002, X-004 | Grok | 4,464,077 | `2f85e6a07784` | Archive repo `packages/` ✓ |
+| `grok-vuln-archive-x002` | D1, X-002 | Grok | 4,449,135 | `bd4ac0281232` | Archive repo `packages/` ✓ (earlier snapshot, a subset of x004) |
+| `p003-historical-evidence` | P-003 | Perplexity | 15,595 | `734c30752d03` | Archive repo `packages/` ✓ |
+| `p004-historical-evidence` | P-004 | Manus | 298,434 | `220a48af59d6` | Archive repo `packages/` ✓ |
 
 The D-004 inventory in `checkpoints/D004_EVIDENCE_INVENTORY.md` said "backup INCOMPLETE". The archive has since been found and matches that inventory byte for byte. Its backup status now follows the table above.
 
@@ -37,11 +37,17 @@ Three agent-to-agent hand-offs are linked by hash or by named input:
 - Gemini chat text
 - DeepSeek D-002/D-003 text blocks
 
+## Storage
+
+- **Bytes:** `holeyfield33-art/Mother-ship-archive` (**public**; it holds only public source data and agent collection reports). Packages are in `packages/<tag>/`; C-002 goes in release `c002` as two parts. Source terms are listed in the archive's `NOTICE.md`.
+- **IP stays here** in this private repo: dossiers, templates, scorecards.
+- Before going public, every committed package was scanned for credentials and personal details. Hits were vulnerability descriptions and published PoC snippets only. The C-002 tarball itself couldn't be scanned (too large), but its fetch checkpoints and logs (inside c003-verification) had no keys.
+
 ## Next 1-3 actions
 
-1. **Owner:** create the private repo `holeyfield33-art/Mother-ship-archive`.
-2. Upload the ~33 MB of packages as releases (tags in each manifest's `storage.release_tag`), then set `storage.status` to `UPLOADED`.
-3. **Owner, on the PC:** split C-002 into two parts under 2 GiB each, fill `parts[]` in `manifests/c002-handoff.json`, verify the rejoin with `scripts/mship_manifest.py`, then upload.
+1. **Owner, on the PC:** finish `split_c002.ps1`, paste back its JSON, and fill `parts[]` in `manifests/c002-handoff.json`.
+2. **Owner:** create release `c002` in the archive repo and upload both parts. Releases can't be created from Claude's session; git pushes can.
+3. Verify the C-002 parts from the release download (`scripts/mship_manifest.py verify manifests/c002-handoff.json part00 part01`), then mark Phase 0 done.
 
 ## Verify a package
 

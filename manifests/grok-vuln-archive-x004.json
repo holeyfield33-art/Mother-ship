@@ -121,7 +121,10 @@
  ],
  "storage": {
   "repo": "holeyfield33-art/Mother-ship-archive",
-  "release_tag": "grok-x004",
-  "status": "PENDING_UPLOAD"
+  "path": "packages/grok-x004/MOTHERSHIP_GROK_D1_X002_X004.zip",
+  "commit": "74aa27c",
+  "visibility": "public",
+  "status": "STORED",
+  "verified": "2026-11-03 fresh public clone, mship_manifest.py verify PASS"
  }
 }
