@@ -2,7 +2,7 @@
 
 **This is the single living status page.** Dated notes in `checkpoints/` are history; where they disagree, this page wins.
 
-**Updated:** 2026-11-03 · **Phase:** 0 (preservation) **complete**; Phase 1 next · **Plan:** [PLAN.md](PLAN.md)
+**Updated:** 2026-11-03 · **Phase:** 0 complete · **Phase 1 (normalize D-004) complete** · Phase 2 (CWE join) next · **Plan:** [PLAN.md](PLAN.md)
 
 ## Packages
 
@@ -43,10 +43,25 @@ Three agent-to-agent hand-offs are linked by hash or by named input:
 - **IP stays here** in this private repo: dossiers, templates, scorecards.
 - Before going public, every committed package was scanned for credentials and personal details. Hits were vulnerability descriptions and published PoC snippets only. The C-002 tarball itself couldn't be scanned (too large), but its fetch checkpoints and logs (inside c003-verification) had no keys.
 
+## Records (Phase 1)
+
+`records/d004/*.jsonl`: 14,021 records in `mothership-record/v1` (see [SCHEMA.md](SCHEMA.md)), built by `scripts/normalize_d004.py` from the preserved D-004 package. The script refuses a package whose hash doesn't match its manifest. Counts per source and file hashes are in `records/d004/SUMMARY.json`.
+
+| Source | Records | Tier R1 (fix located) | Fix commit URL | Named affected functions | Structured CWE |
+|---|---:|---:|---:|---:|---:|
+| Go | 4,712 | 4,203 | 2,690 | 1,022 | 0 |
+| PyPA | 7,901 | 6,909 | 4,150 | 2 | 2 |
+| RustSec | 1,375 (859 vuln · 228 unsound · 282 unmaintained · 6 notice) | 912 | 218 | 303 | 0 |
+| Hackage | 33 | 33 | 16 | 1 | 0 |
+
+Withdrawn records are kept and flagged (Go 18, PyPA 272, RustSec 25). **Bug class (CWE) is almost absent** (2 of 14,021), which is why Phase 2 exists.
+
+Verified: counts match the D-004 acquisition manifest; two builds are byte-identical (`--check`); 16 tests pass, including refusals of a tampered package, a missing id, missing provenance and a YAML version coerced to a number; 3 records matched their live pages (GO-2022-0462, RUSTSEC-2020-0108, PYSEC-2012-1).
+
 ## Next 1-3 actions
 
-1. **Phase 1:** normalize D-004 into `records/*.jsonl`, one deterministic script per source. Done when counts equal 4,712 / 7,901 / 1,375 / 33 and reruns are byte-identical.
-2. **Phase 2 prep:** decide where the C-002 extraction runs. GitHub Advisory (143 MB) and the NVD pages are needed for the CWE join; the parts can now be downloaded anywhere.
+1. **Phase 2:** stream C-002 from the `c002` release and extract only the GitHub Advisory (CWE fields) and NVD (CWE fields) data. Join to records through aliases, with every inherited CWE labelled by `cwe_source`.
+2. Report CWE coverage per source after the join; that ranks the first class to study.
 3. Deferred, owner's choice: Perplexity cycle-1 ZIP, Manus C-001, Gemini and DeepSeek chat text.
 
 ## Verify a package

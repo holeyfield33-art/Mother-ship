@@ -1,0 +1,88 @@
+{
+ "package_id": "d004-ecosystem-evidence",
+ "package_sha256": "8bf7a6311e32ce803efb1cb6531c1a63a53eda2732a38d6bab486da6c52c3a7e",
+ "sources": {
+  "go_vulndb": {
+   "evidence_tier": {
+    "R0": 509,
+    "R1": 4203
+   },
+   "expected": 4712,
+   "file": "go_vulndb.jsonl",
+   "file_sha256": "f86d9549d61cfdc67ea0be640bc553fdf04806a26f7c9f1c66486ef80927cb7f",
+   "kind": {
+    "vulnerability": 4712
+   },
+   "records": 4712,
+   "with_cve_alias": 4272,
+   "with_cwe_text_mention": 1,
+   "with_fix_commit": 2690,
+   "with_fixed_version": 3901,
+   "with_structured_cwe": 0,
+   "with_symbols": 1022,
+   "withdrawn": 18
+  },
+  "hackage": {
+   "evidence_tier": {
+    "R1": 33
+   },
+   "expected": 33,
+   "file": "hackage.jsonl",
+   "file_sha256": "aa90f55624c9011bba9cc0228c362421af0a76165611c4df07603797378101ad",
+   "kind": {
+    "vulnerability": 33
+   },
+   "records": 33,
+   "with_cve_alias": 20,
+   "with_cwe_text_mention": 0,
+   "with_fix_commit": 16,
+   "with_fixed_version": 30,
+   "with_structured_cwe": 0,
+   "with_symbols": 1,
+   "withdrawn": 0
+  },
+  "pypa": {
+   "evidence_tier": {
+    "R0": 992,
+    "R1": 6909
+   },
+   "expected": 7901,
+   "file": "pypa.jsonl",
+   "file_sha256": "48a5737becc961fb817314fa8d3c8aa5ca6a54e354209c28eb59e835cab6dcba",
+   "kind": {
+    "vulnerability": 7901
+   },
+   "records": 7901,
+   "with_cve_alias": 7832,
+   "with_cwe_text_mention": 233,
+   "with_fix_commit": 4150,
+   "with_fixed_version": 6708,
+   "with_structured_cwe": 2,
+   "with_symbols": 2,
+   "withdrawn": 272
+  },
+  "rustsec": {
+   "evidence_tier": {
+    "R0": 463,
+    "R1": 912
+   },
+   "expected": 1375,
+   "file": "rustsec.jsonl",
+   "file_sha256": "48093960e9455f6d91ab87841751c71fb5f2bf5eb475056112a37006e5423579",
+   "kind": {
+    "notice": 6,
+    "unmaintained": 282,
+    "unsound": 228,
+    "vulnerability": 859
+   },
+   "records": 1375,
+   "with_cve_alias": 561,
+   "with_cwe_text_mention": 27,
+   "with_fix_commit": 218,
+   "with_fixed_version": 866,
+   "with_structured_cwe": 0,
+   "with_symbols": 303,
+   "withdrawn": 25
+  }
+ }
+}
