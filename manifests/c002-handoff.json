@@ -13,16 +13,31 @@
  "asset_name": "MOTHERSHIP_C002_HANDOFF.tar.gz",
  "bytes": 3659552713,
  "sha256": "14738da2fc7d0dd0ea9cb36f9dd3b7b618344fbc3fe3103d8719c8d4c4dabf62",
- "hash_evidence": "Manus C-002 self-report and C-003 verification report (217/217 raw files PASS); byte count observed on owner PC 2026-11-02. Not rehashed by this session (file too large to transfer).",
+ "hash_evidence": "Manus C-002 self-report; C-003 verification (217/217 raw files PASS); owner PC rehash 2026-11-03 matched; split rejoin verified on PC; GitHub release digests for both parts match.",
  "container": "tar",
  "entry_count": 0,
  "entries": [],
- "parts": null,
+ "parts": [
+  {
+   "name": "MOTHERSHIP_C002_HANDOFF.tar.gz.part00",
+   "bytes": 1900000000,
+   "sha256": "bdd141148bd0d60055acc3c0c1c5b0f937f37bd985ca96b718c5cff661162503"
+  },
+  {
+   "name": "MOTHERSHIP_C002_HANDOFF.tar.gz.part01",
+   "bytes": 1759552713,
+   "sha256": "9a2622c8813ba23ca27d1cba4a493d9a6b4c8d3b38aa1cb33d30fa2fdacf7cfb"
+  }
+ ],
  "storage": {
   "repo": "holeyfield33-art/Mother-ship-archive",
   "release_tag": "c002",
-  "status": "PENDING_SPLIT_AND_UPLOAD",
-  "split_rule": "two parts under 2 GiB each (GitHub release asset limit); fill parts[] with name/bytes/sha256 after splitting; verify rejoin before upload",
-  "visibility": "public"
+  "visibility": "public",
+  "status": "STORED",
+  "urls": [
+   "https://github.com/holeyfield33-art/Mother-ship-archive/releases/download/c002/MOTHERSHIP_C002_HANDOFF.tar.gz.part00",
+   "https://github.com/holeyfield33-art/Mother-ship-archive/releases/download/c002/MOTHERSHIP_C002_HANDOFF.tar.gz.part01"
+  ],
+  "rejoin": "cat part00 part01 > MOTHERSHIP_C002_HANDOFF.tar.gz"
  }
 }
