@@ -34,3 +34,17 @@ One JSON object per advisory, one per line, in `records/<cycle>/<source>.jsonl`.
 - **Parsing:** YAML is read with every value as a string, so `1.10` stays `"1.10"` and doesn't become the number `1.1`.
 - **Nothing is invented.** A missing field is `null` or an empty list.
 - **Every record must have** `id`, `source`, `url`, `kind`, `evidence_tier` and a complete `provenance`; the normalizer refuses to write output otherwise.
+
+## CWE join: `records/<cycle>/cwe_join.jsonl` (Phase 2)
+
+Phase 1 records are never edited. The join is a separate file, one line per record, built by `scripts/join_cwe.py` from `derived/c002_cwe/` (extracted by `scripts/extract_c002_cwe.py`, which streams C-002 and checks every file it reads against C-002's own `SHA256SUMS.txt`).
+
+| Field | Meaning |
+|---|---|
+| `id`, `source`, `kind` | Same as the record |
+| `cwe_all` | Every real CWE linked to the record (union) |
+| `cwe_links` | One entry per (CWE, origin, via): `origin` = `source_record`, `ghsa` or `nvd`; `via` = the alias it came through; `detail` = `reviewed`/`unreviewed` for GHSA, `Primary:<who>`/`Secondary:<who>` for NVD (Primary = NVD analyst, Secondary = the CNA) |
+| `nvd_placeholders` | `NVD-CWE-noinfo` / `NVD-CWE-Other`; kept, **never counted as a class** |
+| `agreement` | `none`, `single_origin`, `agree` (GHSA and NVD share a CWE) or `conflict` (both have CWEs, none shared) |
+
+Links are **direct only**: the record's own id or alias must equal the GHSA/CVE id. No two-hop links. `CWE_SUMMARY.json` has per-source counts and the most frequent CWEs, excluding RustSec unmaintained/notice entries.

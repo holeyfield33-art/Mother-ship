@@ -1,0 +1,19 @@
+{
+ "files_checked_against_c002_sha256sums": 210,
+ "files_read": 210,
+ "found": {
+  "ghsa_rows": 12204,
+  "ghsa_with_cwe": 11640,
+  "nvd_rows": 11464,
+  "nvd_with_real_cwe": 11003
+ },
+ "ghsa_advisory_files_parsed": 397466,
+ "ghsa_snapshot_sha256": "869e779e04c685144a8b2a4f0f965e46704a82fbef91e72a6a8d8d55f4235727",
+ "nvd_pages": 209,
+ "source_package": "c002-handoff",
+ "source_sha256": "14738da2fc7d0dd0ea9cb36f9dd3b7b618344fbc3fe3103d8719c8d4c4dabf62",
+ "wanted": {
+  "cve_ids": 11485,
+  "ghsa_ids": 11557
+ }
+}

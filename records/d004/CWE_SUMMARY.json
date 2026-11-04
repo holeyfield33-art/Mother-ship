@@ -1,0 +1,216 @@
+{
+ "cycle": "d004",
+ "records": 14021,
+ "per_source": {
+  "go_vulndb": {
+   "agreement_agree": 3771,
+   "agreement_conflict": 76,
+   "agreement_none": 180,
+   "agreement_single_origin": 685,
+   "cwe_from_ghsa": 4257,
+   "cwe_from_nvd": 4122,
+   "only_nvd_placeholder": 39,
+   "records": 4712,
+   "with_cwe": 4532,
+   "with_reviewed_ghsa_cwe": 4257
+  },
+  "hackage": {
+   "agreement_agree": 2,
+   "agreement_none": 14,
+   "agreement_single_origin": 17,
+   "cwe_from_ghsa": 2,
+   "cwe_from_nvd": 19,
+   "only_nvd_placeholder": 0,
+   "records": 33,
+   "with_cwe": 19,
+   "with_reviewed_ghsa_cwe": 2
+  },
+  "pypa": {
+   "agreement_agree": 6651,
+   "agreement_conflict": 173,
+   "agreement_none": 208,
+   "agreement_single_origin": 869,
+   "cwe_from_ghsa": 6960,
+   "cwe_from_nvd": 7555,
+   "cwe_from_source_record": 2,
+   "only_nvd_placeholder": 136,
+   "records": 7901,
+   "with_cwe": 7693,
+   "with_reviewed_ghsa_cwe": 6955
+  },
+  "rustsec": {
+   "agreement_agree": 449,
+   "agreement_conflict": 27,
+   "agreement_none": 663,
+   "agreement_single_origin": 236,
+   "cwe_from_ghsa": 684,
+   "cwe_from_nvd": 504,
+   "only_nvd_placeholder": 5,
+   "records": 1375,
+   "with_cwe": 712,
+   "with_reviewed_ghsa_cwe": 684
+  }
+ },
+ "top_cwe_excluding_unmaintained_and_notices": [
+  [
+   "CWE-22",
+   892
+  ],
+  [
+   "CWE-79",
+   786
+  ],
+  [
+   "CWE-20",
+   712
+  ],
+  [
+   "CWE-400",
+   595
+  ],
+  [
+   "CWE-200",
+   566
+  ],
+  [
+   "CWE-863",
+   529
+  ],
+  [
+   "CWE-770",
+   473
+  ],
+  [
+   "CWE-918",
+   428
+  ],
+  [
+   "CWE-125",
+   385
+  ],
+  [
+   "CWE-94",
+   366
+  ],
+  [
+   "CWE-862",
+   357
+  ],
+  [
+   "CWE-787",
+   350
+  ],
+  [
+   "CWE-284",
+   318
+  ],
+  [
+   "CWE-476",
+   315
+  ],
+  [
+   "CWE-287",
+   289
+  ],
+  [
+   "CWE-502",
+   276
+  ],
+  [
+   "CWE-78",
+   237
+  ],
+  [
+   "CWE-617",
+   226
+  ],
+  [
+   "CWE-119",
+   219
+  ],
+  [
+   "CWE-89",
+   208
+  ],
+  [
+   "CWE-306",
+   204
+  ],
+  [
+   "CWE-639",
+   200
+  ],
+  [
+   "CWE-190",
+   185
+  ],
+  [
+   "CWE-369",
+   176
+  ],
+  [
+   "CWE-295",
+   175
+  ],
+  [
+   "CWE-601",
+   172
+  ],
+  [
+   "CWE-269",
+   167
+  ],
+  [
+   "CWE-285",
+   162
+  ],
+  [
+   "CWE-362",
+   153
+  ],
+  [
+   "CWE-532",
+   142
+  ],
+  [
+   "CWE-352",
+   139
+  ],
+  [
+   "CWE-77",
+   138
+  ],
+  [
+   "CWE-434",
+   136
+  ],
+  [
+   "CWE-347",
+   135
+  ],
+  [
+   "CWE-59",
+   131
+  ],
+  [
+   "CWE-74",
+   131
+  ],
+  [
+   "CWE-345",
+   116
+  ],
+  [
+   "CWE-1333",
+   114
+  ],
+  [
+   "CWE-835",
+   112
+  ],
+  [
+   "CWE-264",
+   105
+  ]
+ ]
+}

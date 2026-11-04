@@ -2,7 +2,7 @@
 
 **This is the single living status page.** Dated notes in `checkpoints/` are history; where they disagree, this page wins.
 
-**Updated:** 2026-11-03 · **Phase:** 0 complete · **Phase 1 (normalize D-004) complete** · Phase 2 (CWE join) next · **Plan:** [PLAN.md](PLAN.md)
+**Updated:** 2026-11-03 · **Phase:** 0 complete · Phase 1 complete · **Phase 2 (CWE join) complete** · Class 1 (CWE-22) next · **Plan:** [PLAN.md](PLAN.md)
 
 ## Packages
 
@@ -58,10 +58,36 @@ Withdrawn records are kept and flagged (Go 18, PyPA 272, RustSec 25). **Bug clas
 
 Verified: counts match the D-004 acquisition manifest; two builds are byte-identical (`--check`); 16 tests pass, including refusals of a tampered package, a missing id, missing provenance and a YAML version coerced to a number; 3 records matched their live pages (GO-2022-0462, RUSTSEC-2020-0108, PYSEC-2012-1).
 
+## CWE join (Phase 2)
+
+`records/d004/cwe_join.jsonl` links records to CWEs from C-002 (GitHub Advisory snapshot, 397,466 advisories parsed; NVD, 209 pages). All 210 files read were checked against C-002's own checksums.
+
+| Source | Records | With a CWE | GHSA & NVD agree | Conflict |
+|---|---:|---:|---:|---:|
+| Go | 4,712 | 4,532 | 3,771 | 76 |
+| PyPA | 7,901 | 7,693 | 6,651 | 173 |
+| RustSec | 1,375 | 712 | 449 | 27 |
+| Hackage | 33 | 19 | 2 | 0 |
+| **Total** | **14,021** | **12,956** | | |
+
+Before the join, 2 records had a CWE. RustSec stays lower because 288 of its entries are unmaintained/notice and many crates have no CVE.
+
+**First class ranking** (records with a fix-commit link = real vulnerable/fixed pairs):
+
+| CWE | Records | Fix-commit pairs | Named functions | Agree |
+|---|---:|---:|---:|---:|
+| **CWE-22 path traversal** | 892 | **505** | 80 | 90% |
+| CWE-20 input validation | 712 | 414 | 79 | 83% |
+| CWE-79 XSS | 786 | 393 | 32 | 90% |
+| CWE-400 resource consumption | 595 | 318 | 86 | 80% |
+| CWE-200 information exposure | 566 | 272 | 23 | 86% |
+
+**Bug caught and fixed during this phase:** the first extraction matched 0 GitHub advisories and still exited OK; the snapshot's paths start with `advisories/`, not `/advisories/`. The extractor now refuses a snapshot that yields zero advisory files (tested).
+
 ## Next 1-3 actions
 
-1. **Phase 2:** stream C-002 from the `c002` release and extract only the GitHub Advisory (CWE fields) and NVD (CWE fields) data. Join to records through aliases, with every inherited CWE labelled by `cwe_source`.
-2. Report CWE coverage per source after the join; that ranks the first class to study.
+1. **Class 1: CWE-22.** Write the selection rule and pick 10-20 study cases with fix commits across Go, PyPA and Rust.
+2. Draft the case-sheet and dossier templates (PLAN section 10) on the first 3 cases, then hand case work to the agents.
 3. Deferred, owner's choice: Perplexity cycle-1 ZIP, Manus C-001, Gemini and DeepSeek chat text.
 
 ## Verify a package
