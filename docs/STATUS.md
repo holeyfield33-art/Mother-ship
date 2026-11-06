@@ -4,7 +4,7 @@
 
 **Updated:** 2026-11-03 · **Phase:** 0 complete · Phase 1 complete · **Phase 2 (CWE join) complete** · Class 1 (CWE-22) next · **Plan:** [PLAN.md](PLAN.md)
 
-**2026-11-05 (docs only):** Registered `diffsec` as an external consumer tool (differential recon / scanner calibration) in `PLAN.md` (sections 2 and 5.2), `AGENTS.md` and `README.md`. No change to data, records, manifests or phase; `diffsec` lives in its own repo and is not merged here.
+**2026-11-05 (docs only):** Registered `diffsec` as an external consumer tool (differential recon / scanner calibration) in `PLAN.md` (sections 2 and 5.2), `AGENTS.md` and `README.md`. No change to data, records, manifests or phase; `diffsec`'s code will live in its own repo (not yet created) and is not merged here.
 
 ## Packages
 
