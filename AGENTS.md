@@ -20,6 +20,10 @@
 - **Binaries don't go in git.** Bytes live as releases in `Mother-ship-archive`; this repo holds manifests that point to them.
 - **Don't change a manifest's hash to make a check pass.** A mismatch is a finding. Stop and report it.
 
+## Consumers
+
+Other tools read MOTHERSHIP's export and live in their own repos (never merged in, per the rule above): the bug-hunt agent, the ASI threat graph, scanner build/test (Sentinel, vibe-explainer, Code Atlas), and `diffsec` (standalone differential-recon / scanner-calibration tool; its own repo, not yet created). `docs/PLAN.md` section 2 lists what each needs from a record.
+
 ## Handoff
 
 When you finish, update `docs/STATUS.md` with what changed, what you ran and the result, and the next 1-3 actions. Don't create other status files.
