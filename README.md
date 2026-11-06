@@ -18,4 +18,4 @@ All located research packages have been hashed and recorded in `manifests/`. The
 
 ## Consumers
 
-Tools that use MOTHERSHIP's data live in their own repos and read its export; they are not merged in (see `AGENTS.md`). Current consumers include the bug-hunt agent, the ASI threat graph, scanner build/test (Sentinel, vibe-explainer, Code Atlas), and `diffsec` -- a standalone differential-recon tool that uses the fix-commit pairs for scanner calibration. See [docs/PLAN.md](docs/PLAN.md) section 2.
+Tools that use MOTHERSHIP's data live in their own repos and read its export; they are not merged in (see `AGENTS.md`). Current consumers include the bug-hunt agent, the ASI threat graph, scanner build/test (Sentinel, vibe-explainer, Code Atlas), and `diffsec` ([holeyfield33-art/diffsec](https://github.com/holeyfield33-art/diffsec)) -- a standalone differential-recon tool that uses the fix-commit pairs for scanner calibration. See [docs/PLAN.md](docs/PLAN.md) section 2.
