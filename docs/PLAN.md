@@ -67,7 +67,7 @@ Per your rule, the users are **agents**, not people. Each one needs a different 
 | Consumer | Question it asks | What it needs from a record |
 |---|---|---|
 | **Bug-hunt agent** | "What's known about package X at version Y? What bug classes hit this kind of code?" | Package, affected/fixed range, CWE, root cause, fix link |
-| **Build/test (Sentinel, vibe-explainer, Code Atlas)** | "Give me real vulnerable and fixed code to score my scanner on." | Fix commit URL, repo, CWE, file and line if known |
+| **Build/test (Sentinel, vibe-explainer, Code Atlas, diffsec)** | "Give me real vulnerable and fixed code to score my scanner on." | Fix commit URL, repo, CWE, file and line if known |
 | **ASI threat graph** | "Which real-world bug classes back each attack class?" | CWE / root-cause class, report link, evidence tier |
 | **Blockwise (later)** | Not decided yet | Deferred; see 6.4 |
 
@@ -223,6 +223,8 @@ The 6,688 Go + PyPA fix-commit links give real vulnerable/fixed pairs for scorin
 3. Matching CWE says whether it flagged the right class.
 
 This is the calibration set we couldn't build earlier.
+
+**Tooling:** `diffsec` (a standalone, generic differential-recon tool in its own repo, not merged here per the separation rule) mechanizes steps 1-2. Given a stable ref and a fixed ref it ranks the security-relevant commits, splits a bug pattern's call-site surface into patched sites vs. untouched **unpatched siblings**, and pulls the negative-control tests for each so a consumer does not re-chase intended behaviour. On MOTHERSHIP's fix-commit pairs it runs the parent-vs-fix differential above; pointed at a live target it hunts unpatched siblings of an already-fixed pattern. It reads the pairs and knows nothing about MOTHERSHIP's schema, so the export stays generic.
 
 ### 5.3 ASI grounding
 

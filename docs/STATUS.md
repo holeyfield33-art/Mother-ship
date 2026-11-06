@@ -4,6 +4,8 @@
 
 **Updated:** 2026-11-03 · **Phase:** 0 complete · Phase 1 complete · **Phase 2 (CWE join) complete** · Class 1 (CWE-22) next · **Plan:** [PLAN.md](PLAN.md)
 
+**2026-11-05 (docs only):** Registered `diffsec` as an external consumer tool (differential recon / scanner calibration) in `PLAN.md` (sections 2 and 5.2), `AGENTS.md` and `README.md`. No change to data, records, manifests or phase; `diffsec` lives in its own repo and is not merged here.
+
 ## Packages
 
 Every package below was hashed in full and matches its manifest in `manifests/`. C-002 was checked on the owner's PC (original hash matched, split rejoin verified), against GitHub's computed digests for both release parts, and by streaming both parts back from GitHub: the rejoined bytes hash to `14738da2…`, 3,659,552,713 bytes.
