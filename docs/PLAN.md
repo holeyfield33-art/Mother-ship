@@ -224,7 +224,7 @@ The 6,688 Go + PyPA fix-commit links give real vulnerable/fixed pairs for scorin
 
 This is the calibration set we couldn't build earlier.
 
-**Tooling:** `diffsec` (a standalone, generic differential-recon tool; its own repo is not yet created, and it is not merged here per the separation rule) mechanizes steps 1-2. Given a stable ref and a fixed ref it ranks the security-relevant commits, splits a bug pattern's call-site surface into patched sites vs. untouched **unpatched siblings**, and pulls the negative-control tests for each so a consumer does not re-chase intended behaviour. On MOTHERSHIP's fix-commit pairs it runs the parent-vs-fix differential above; pointed at a live target it hunts unpatched siblings of an already-fixed pattern. It reads the pairs and knows nothing about MOTHERSHIP's schema, so the export stays generic.
+**Tooling:** `diffsec` (a standalone, generic differential-recon tool in its own repo, `holeyfield33-art/diffsec`; not merged here per the separation rule) mechanizes steps 1-2. Given a stable ref and a fixed ref it ranks the security-relevant commits, splits a bug pattern's call-site surface into patched sites vs. untouched **unpatched siblings**, and pulls the negative-control tests for each so a consumer does not re-chase intended behaviour. On MOTHERSHIP's fix-commit pairs it runs the parent-vs-fix differential above; pointed at a live target it hunts unpatched siblings of an already-fixed pattern. It reads the pairs and knows nothing about MOTHERSHIP's schema, so the export stays generic.
 
 ### 5.3 ASI grounding
 
