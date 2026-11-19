@@ -22,7 +22,7 @@
 
 ## Consumers
 
-Other tools read MOTHERSHIP's export and live in their own repos (never merged in, per the rule above): the bug-hunt agent, the ASI threat graph, scanner build/test (Sentinel, vibe-explainer, Code Atlas), and `diffsec` (standalone differential-recon / scanner-calibration tool; its own repo, `holeyfield33-art/diffsec`). `docs/PLAN.md` section 2 lists what each needs from a record.
+Other tools read MOTHERSHIP's export and live in their own repos (never merged in, per the rule above): the bug-hunt agent, the ASI threat graph, the Agent Security Index (`holeyfield33-art/agent-security-index`; proposal-only — MOTHERSHIP must not publish into the index, merge into it, or update the live catalog), scanner build/test (Sentinel, vibe-explainer, Code Atlas), and `diffsec` (standalone differential-recon / scanner-calibration tool; its own repo, `holeyfield33-art/diffsec`). `docs/PLAN.md` section 2 lists what each needs from a record.
 
 ## Handoff
 
