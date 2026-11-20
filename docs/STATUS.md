@@ -2,7 +2,9 @@
 
 **This is the single living status page.** Dated notes in `checkpoints/` are history; where they disagree, this page wins.
 
-**Updated:** 2026-11-03 · **Phase:** 0 complete · Phase 1 complete · **Phase 2 (CWE join) complete** · Class 1 (CWE-22) next · **Plan:** [PLAN.md](PLAN.md)
+**Updated:** 2026-11-19 · **Phase:** 0 complete · Phase 1 complete · **Phase 2 (CWE join) complete** · Class 1 (CWE-22) export assembled · **Plan:** [PLAN.md](PLAN.md)
+
+**2026-11-19:** Added `scripts/assemble.py` and `tests/test_assemble.py`. The script writes `export/mothership-catalog.json` for the CWE-22 slice only: records with CWE-22 in `cwe_join.cwe_all`, a public primary URL, and at least one fix-commit link. Withdrawn records are counted but excluded. Ran `python3 tests/test_assemble.py` (10 tests, OK) and `python3 scripts/assemble.py --check` against the committed export. Counts from `records/d004`: 892 CWE-22 records, 505 with a fix-commit link, 2 of those withdrawn, **503 exported**. Registered `agent-security-index` as a proposal-only consumer in `PLAN.md` (sections 2 and 5.3), `AGENTS.md` and `README.md`. MOTHERSHIP does not publish into the index or update its live catalog.
 
 **2026-11-05 (docs only):** Registered `diffsec` as an external consumer tool (differential recon / scanner calibration) in `PLAN.md` (sections 2 and 5.2), `AGENTS.md` and `README.md`. No change to data, records, manifests or phase; `diffsec`'s code lives in its own repo, `holeyfield33-art/diffsec`, and is not merged here.
 
@@ -88,8 +90,8 @@ Before the join, 2 records had a CWE. RustSec stays lower because 288 of its ent
 
 ## Next 1-3 actions
 
-1. **Class 1: CWE-22.** Write the selection rule and pick 10-20 study cases with fix commits across Go, PyPA and Rust.
-2. Draft the case-sheet and dossier templates (PLAN section 10) on the first 3 cases, then hand case work to the agents.
+1. Review the CWE-22 export (`export/mothership-catalog.json`) and the proposal-only draft incidents on the Agent Security Index review branch. Do not merge or deploy from this repo.
+2. Continue Class 1: pick 10-20 study cases with fix commits across Go, PyPA and Rust, and draft the case-sheet / dossier templates (PLAN section 10).
 3. Deferred, owner's choice: Perplexity cycle-1 ZIP, Manus C-001, Gemini and DeepSeek chat text.
 
 ## Verify a package

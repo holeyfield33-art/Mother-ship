@@ -69,6 +69,7 @@ Per your rule, the users are **agents**, not people. Each one needs a different 
 | **Bug-hunt agent** | "What's known about package X at version Y? What bug classes hit this kind of code?" | Package, affected/fixed range, CWE, root cause, fix link |
 | **Build/test (Sentinel, vibe-explainer, Code Atlas, diffsec)** | "Give me real vulnerable and fixed code to score my scanner on." | Fix commit URL, repo, CWE, file and line if known |
 | **ASI threat graph** | "Which real-world bug classes back each attack class?" | CWE / root-cause class, report link, evidence tier |
+| **Agent Security Index** (`holeyfield33-art/agent-security-index`) | "Which well-sourced advisories could become draft incidents?" | Public report URL, CWE, fix-commit link, evidence tier. **Proposal only:** MOTHERSHIP must not publish into the index or update its live catalog; candidates go through ASI's review branch and human approval. |
 | **Blockwise (later)** | Not decided yet | Deferred; see 6.4 |
 
 **Design rule:** an agent must be able to tell, from the record alone, how much to trust it. So every record carries its evidence tier and its provenance, the same way ASI does.
@@ -229,6 +230,8 @@ This is the calibration set we couldn't build earlier.
 ### 5.3 ASI grounding
 
 CWE nodes linked to AAC classes give ASI field evidence it currently lacks. That has to go through ASI's own review gate; MOTHERSHIP doesn't publish into ASI directly.
+
+The same no-auto-publish rule applies to the Agent Security Index itself (`holeyfield33-art/agent-security-index`). `scripts/assemble.py` builds `export/mothership-catalog.json` for a named CWE slice (Class 1: CWE-22 records with a public primary URL and a fix-commit link; withdrawn records are counted but not exported). The index may use those records only as *proposals*. Draft incidents belong on an ASI review branch; nothing is merged or deployed from this repo.
 
 ### 5.4 Blockwise (later)
 
